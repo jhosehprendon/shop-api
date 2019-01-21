@@ -11,6 +11,8 @@ mongoose.connect('mongodb://shop-node:' + process.env.MONGO_ATLAS_PW + '@node-sh
     useMongoClient: true
 })
 
+mongoose.Promise = global.Promise
+
 app.use(morgan('dev'))
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
