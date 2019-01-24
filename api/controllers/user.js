@@ -7,9 +7,9 @@ const User = require('../models/user');
 exports.user_signup = (req, res, next) => {
     User.find({ email: req.body.email }).exec().then(user => {
         if(user.length >= 1) {
-            return res.status(409).json({
-                message: 'Email already exist'
-            })
+            res.status(409).json({
+                message: 'Email already taken'
+            })   
             
         } else {
             bcrypt.hash(req.body.password, 10, (err, hash) => {
