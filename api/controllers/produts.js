@@ -47,6 +47,7 @@ exports.products_create_product = (req, res, next) => {
                 name: result.name,
                 price: result.price,
                 _id: result._id,
+                productImage: result.productImage,
                 request: {
                     type: 'GET',
                     url: 'http://localhost:3000/products/' + result._id
