@@ -12,7 +12,11 @@ const productSchema = mongoose.Schema({
     },
     productImage: {
         type: String,
-        rerquired: false
+        rerquired: true
+    },
+    userId: {
+        type: String,
+        rerquired: true
     }
 })
 
